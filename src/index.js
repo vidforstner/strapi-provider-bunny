@@ -34,16 +34,14 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
    */
   const upload = async (file) => {
     const data = file.stream || Buffer.from(file.buffer, 'binary');
-    // const checksum = generateChecksum(data);
 
     try {
       const response = await axios.put(
-        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         data,
         {
           headers: {
             AccessKey: api_key,
-            // Checksum: checksum,
             'content-type': 'application/octet-stream',
           },
         },
@@ -74,7 +72,7 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
   const download = async (file) => {
     try {
       const response = await axios.get(
-        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,
@@ -113,7 +111,7 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
   const deleteFile = async (file) => {
     try {
       const response = await axios.delete(
-        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,

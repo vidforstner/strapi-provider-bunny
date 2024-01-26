@@ -1,12 +1,3 @@
-const crypto = require('crypto');
-
-function generateChecksum(str, algorithm = 'sha256', encoding = 'hex') {
-  return crypto
-    .createHash(algorithm)
-    .update(str, 'utf8')
-    .digest(encoding || 'hex');
-}
-
 function getMimeType(extension) {
   const mimeTypes = {
     '.aac': 'audio/aac',
@@ -87,4 +78,4 @@ function getMimeType(extension) {
   return mimeTypes[extension.toLowerCase()] || 'application/octet-stream';
 }
 
-module.exports = { generateChecksum, getMimeType };
+module.exports = { getMimeType };
