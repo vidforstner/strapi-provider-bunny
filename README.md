@@ -2,6 +2,18 @@
 
 Bunny.net Upload Provider for Strapi V4.
 
+## Installation
+
+```bash
+npm install @nexide/strapi-provider-bunny
+```
+
+or
+
+```bash
+yarn add @nexide/strapi-provider-bunny
+```
+
 ## Configurations
 
 See the [using a provider](https://strapi.io/documentation/developer-docs/latest/development/plugins/upload.html#using-a-provider) documentation for information on installing and using a provider. And see the [environment variables](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/configurations.html#environment-variables) for setting and using environment variables in your configs.
