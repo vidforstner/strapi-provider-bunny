@@ -1,6 +1,6 @@
 {
   "name": "strapi-provider-bunny",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "Bunny.net provider for Strapi upload",
   "main": "./lib",
   "scripts": {
