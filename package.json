@@ -21,7 +21,11 @@
     "nexide"
   ],
   "strapi": {
-    "isProvider": true
+    "isProvider": true,
+    "name": "strapi-provider-bunny",
+    "description": "Bunny.net provider for Strapi",
+    "kind": "plugin",
+    "displayName": "Bunny.net provider for Strapi"
   },
   "dependencies": {
     "@strapi/utils": "^4.5.4",
