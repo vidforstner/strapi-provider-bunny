@@ -1,4 +1,4 @@
-# strapi-provider-upload-bunnynet
+# @nexide/strapi-provider-bunny
 
 Bunny.net Upload Provider for Strapi V4.
 
@@ -15,7 +15,7 @@ module.exports = ({ env }) => ({
   //...
   upload: {
     config: {
-      provider: "strapi-provider-bunny",
+      provider: "@nexide/strapi-provider-bunny",
       providerOptions: {
         api_key: env("BUNNY_API_KEY"),
         storage_zone: env("BUNNY_STORAGE_ZONE"),
