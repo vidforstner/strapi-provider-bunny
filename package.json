@@ -1,14 +1,15 @@
 {
-  "name": "strapi-provider-upload-bunnynet",
+  "name": "strapi-provider-bunny",
   "version": "1.0.3",
   "description": "Bunny.net provider for Strapi upload",
   "main": "./lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/thor9n/strapi-provider-upload-bunnynet.git"
+    "url": "git+ssh://git@github.com/jzambrano12/strapi-provider-bunny"
   },
   "keywords": [
     "strapi",
@@ -16,23 +17,25 @@
     "provider",
     "storage",
     "bunny.net",
-    "cdn"
+    "cdn",
+    "nexide"
   ],
   "strapi": {
     "isProvider": true
   },
   "dependencies": {
     "@strapi/utils": "^4.5.4",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "mime": "^4.0.1"
   },
   "author": {
-    "email": "niklas@crisby.co",
-    "name": "Nick Thorin",
-    "url": "https://crisby.co"
+    "email": "jorge@nexide.co",
+    "name": "Jorge Zambrano",
+    "url": "https://nexide.co"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thor9n/strapi-provider-upload-bunnynet/issues"
+    "url": "https://github.com/jzambrano12/strapi-provider-bunny/issues"
   },
-  "homepage": "https://github.com/thor9n/strapi-provider-upload-bunnynet#readme"
+  "homepage": "https://github.com/jzambrano12/strapi-provider-bunny#readme"
 }
