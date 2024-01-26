@@ -12,7 +12,7 @@ See the [using a provider](https://strapi.io/documentation/developer-docs/latest
 
 ```js
 module.exports = ({ env }) => ({
-  //...
+  // ...
   upload: {
     config: {
       provider: '@nexide/strapi-provider-bunny',
@@ -24,7 +24,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  //...
+  // ...
 });
 ```
 
@@ -56,11 +56,18 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', process.env.BUNNY_PULL_ZONE],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'market-assets.strapi.io',
+            process.env.BUNNY_PULL_ZONE,
+          ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
+            'market-assets.strapi.io',
             process.env.BUNNY_PULL_ZONE,
           ],
           upgradeInsecureRequests: null,
@@ -68,6 +75,6 @@ module.exports = [
       },
     },
   },
-  // ...
+  //  ...
 ];
 ```

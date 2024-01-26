@@ -1,7 +1,7 @@
 import { errors } from '@strapi/utils';
 import axios from 'axios';
 import { Buffer } from 'buffer';
-import { generateChecksum, getMimeType } from './utils/index.js';
+import { getMimeType } from './utils/index.js';
 
 const { ApplicationError } = errors;
 
@@ -34,16 +34,16 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
    */
   const upload = async (file) => {
     const data = file.stream || Buffer.from(file.buffer, 'binary');
-    const checksum = generateChecksum(data);
+    // const checksum = generateChecksum(data);
 
     try {
       const response = await axios.put(
-        `${region}.storage.bunnycdn.com/${storage_zone}/${file.hash}${file.ext}`,
+        `ny.storage.bunnycdn.com/${storage_zone}/${file.hash}${file.ext}`,
         data,
         {
           headers: {
             AccessKey: api_key,
-            Checksum: checksum,
+            // Checksum: checksum,
             'content-type': 'application/octet-stream',
           },
         },
