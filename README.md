@@ -15,17 +15,17 @@ module.exports = ({ env }) => ({
   //...
   upload: {
     config: {
-      provider: "@nexide/strapi-provider-bunny",
+      provider: '@nexide/strapi-provider-bunny',
       providerOptions: {
-        api_key: env("BUNNY_API_KEY"),
-        storage_zone: env("BUNNY_STORAGE_ZONE"),
-        pull_zone: env("BUNNY_PULL_ZONE"),
-        region: env("BUNNY_REGION"),
+        api_key: env('BUNNY_API_KEY'),
+        storage_zone: env('BUNNY_STORAGE_ZONE'),
+        pull_zone: env('BUNNY_PULL_ZONE'),
+        region: env('BUNNY_REGION'),
       },
     },
   },
   //...
-})
+});
 ```
 
 `.env`
@@ -50,19 +50,24 @@ Due to the default settings in the Strapi Security Middleware you will need to m
 module.exports = [
   // ...
   {
-    name: "strapi::security",
+    name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": ["'self'", "https:"],
-          "img-src": ["'self'", "data:", "blob:", process.env.BUNNY_PULL_ZONE],
-          "media-src": ["'self'", "data:", "blob:", process.env.BUNNY_PULL_ZONE],
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', process.env.BUNNY_PULL_ZONE],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            process.env.BUNNY_PULL_ZONE,
+          ],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
   // ...
-]
+];
 ```
