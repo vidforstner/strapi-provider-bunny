@@ -1,3 +1,3 @@
 {
-    "ignorePatterns": ["**/lib", "**/node_modules"]
+    "ignorePatterns": ["**/lib", "**/node_modules", "pnpm-lock.yaml"]
 }
