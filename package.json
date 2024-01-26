@@ -1,5 +1,5 @@
 {
-  "name": "strapi-provider-bunny",
+  "name": "@nexide/strapi-provider-bunny",
   "version": "1.0.0",
   "description": "Bunny.net provider for Strapi upload",
   "main": "./lib",
@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jzambrano12/strapi-provider-bunny"
+    "url": "git+ssh://git@github.com/jzambrano12/strapi-provider-bunny.git"
   },
   "keywords": [
     "strapi",
@@ -27,19 +27,22 @@
     "kind": "plugin",
     "displayName": "Bunny.net provider for Strapi"
   },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.x.x"
+  },
   "dependencies": {
     "@strapi/utils": "^4.5.4",
     "axios": "^0.21.1",
     "mime": "^4.0.1"
   },
-  "author": {
-    "email": "jorge@nexide.co",
-    "name": "Jorge Zambrano",
-    "url": "https://nexide.co"
-  },
+  "author": "Jorge Zambrano <jorge@nexide.co> (https://nexide.co)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jzambrano12/strapi-provider-bunny/issues"
   },
-  "homepage": "https://github.com/jzambrano12/strapi-provider-bunny#readme"
+  "homepage": "https://github.com/jzambrano12/strapi-provider-bunny#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
