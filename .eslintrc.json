@@ -8,5 +8,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "no-undef": "off",
+    "no-constant-condition": "off",
+    "no-unused-vars": "off",
+    "no-fallthrough": "off"
+  }
 }

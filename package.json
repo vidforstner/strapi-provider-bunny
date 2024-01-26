@@ -3,8 +3,9 @@
   "version": "1.0.5",
   "description": "Bunny.net provider for Strapi upload",
   "main": "./lib/index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
+    "build": "babel src --out-dir lib --extensions \".js,.jsx,.ts,.tsx\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -46,10 +47,13 @@
     "lib": "lib"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.4",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "prettier": "^3.2.4"
   }
 }
