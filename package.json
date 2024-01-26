@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "type": "commonjs",
   "scripts": {
-    "build": "babel src --out-dir lib --extensions \".js,.jsx,.ts,.tsx\"",
+    "build": "babel src --out-dir lib --extensions \".js,.jsx,.ts,.tsx\" --presets minify",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -49,7 +49,7 @@
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
-    "babel-minify": "^0.5.2",
+    "babel-preset-minify": "^0.5.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",

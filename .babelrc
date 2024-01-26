@@ -9,6 +9,6 @@
         "modules": "commonjs"
       }
     ],
-    "babel-minify"
+    "minify"
   ]
 }
