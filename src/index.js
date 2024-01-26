@@ -1,7 +1,7 @@
 import { errors } from '@strapi/utils';
 import axios from 'axios';
 import { Buffer } from 'buffer';
-import { generateChecksum, getMimeType } from '../utils/index.js';
+import { generateChecksum, getMimeType } from './utils/index.js';
 
 const { ApplicationError } = errors;
 
