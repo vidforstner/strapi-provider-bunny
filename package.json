@@ -2,7 +2,7 @@
   "name": "@nexide/strapi-provider-bunny",
   "version": "1.0.4",
   "description": "Bunny.net provider for Strapi upload",
-  "main": "lib/index.mjs",
+  "main": "./lib/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
