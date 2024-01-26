@@ -1,6 +1,6 @@
 {
   "name": "@nexide/strapi-provider-bunny",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bunny.net provider for Strapi upload",
   "main": "./lib",
   "type": "module",
