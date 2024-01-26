@@ -15,14 +15,12 @@ module.exports = ({ env }) => ({
   //...
   upload: {
     config: {
-      provider: "strapi-provider-upload-bunnynet",
+      provider: "strapi-provider-bunny",
       providerOptions: {
         api_key: env("BUNNY_API_KEY"),
         storage_zone: env("BUNNY_STORAGE_ZONE"),
         pull_zone: env("BUNNY_PULL_ZONE"),
-
-        // optional:
-        // storage_endpoint: env("BUNNY_STORAGE_ZONE"),
+        region: env("BUNNY_REGION"),
       },
     },
   },
@@ -35,7 +33,7 @@ module.exports = ({ env }) => ({
 ```
 BUNNY_API_KEY: Storage Password (Inside FTP & API Access).
 BUNNY_STORAGE_ZONE: Storage Zone name.
-BUNNY_STORAGE_ENDPOINT: Storage Endpoint Url (optional)
+BUNNY_REGION: Region Specified in Hostname (Inside FTP & API Access). eg: <REGION>.storage.bunnycdn.com
 BUNNY_PULL_ZONE: Pull Zone URL.
 ```
 
