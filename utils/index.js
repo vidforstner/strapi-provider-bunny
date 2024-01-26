@@ -1,4 +1,4 @@
-import crypto from 'node:crypto';
+const crypto = require('crypto');
 
 export function generateChecksum(str, algorithm = 'sha256', encoding = 'hex') {
   return crypto
