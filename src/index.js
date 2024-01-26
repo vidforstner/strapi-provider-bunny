@@ -137,6 +137,7 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
     upload,
     download,
     delete: deleteFile,
+    uploadStream: upload,
   };
 };
 
