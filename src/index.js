@@ -1,8 +1,7 @@
 import { errors } from '@strapi/utils';
 import axios from 'axios';
 import { Buffer } from 'buffer';
-import mime from 'mime';
-import { generateChecksum } from '../utils/index.js';
+import { generateChecksum, getMimeType } from '../utils/index.js';
 
 const { ApplicationError } = errors;
 
@@ -84,7 +83,7 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
         },
       );
 
-      const type = mime.getType(file.ext);
+      const type = getMimeType(file.ext);
       let body;
 
       if (/^text(\/|$)/.test(type)) {
