@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jzambrano12/strapi-provider-bunny.git"
+    "url": "git+ssh://git@github.com/NexideSas/strapi-provider-bunny.git"
   },
   "keywords": [
     "strapi",
@@ -38,9 +38,9 @@
   "author": "Jorge Zambrano <jorge@nexide.co> (https://nexide.co)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jzambrano12/strapi-provider-bunny/issues"
+    "url": "https://github.com/NexideSas/strapi-provider-bunny/issues"
   },
-  "homepage": "https://github.com/jzambrano12/strapi-provider-bunny#readme",
+  "homepage": "https://github.com/NexideSas/strapi-provider-bunny#readme",
   "directories": {
     "lib": "lib"
   },
