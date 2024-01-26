@@ -53,7 +53,7 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
         );
       }
 
-      file.url = `${pull_zone}/${file.hash}${file.ext}`;
+      file.url = `https://${pull_zone}/${file.hash}${file.ext}`;
     } catch (error) {
       throw new ApplicationError(
         `Error uploading to Bunny.net: ${error.message}`,
