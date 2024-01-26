@@ -1,3 +1,3 @@
 {
-    "ignorePatterns": ["**/lib/*.js"]
+    "ignorePatterns": ["**/lib/*", "**/node_modules/*"]
 }
