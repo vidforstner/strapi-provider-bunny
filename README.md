@@ -20,7 +20,7 @@ module.exports = ({ env }) => ({
         api_key: env('BUNNY_API_KEY'),
         storage_zone: env('BUNNY_STORAGE_ZONE'),
         pull_zone: env('BUNNY_PULL_ZONE'),
-        region: env('BUNNY_REGION'),
+        hostname: env('BUNNY_HOSTNAME'),
       },
     },
   },
@@ -33,7 +33,7 @@ module.exports = ({ env }) => ({
 ```
 BUNNY_API_KEY: Storage Password (Inside FTP & API Access).
 BUNNY_STORAGE_ZONE: Storage Zone name.
-BUNNY_REGION: Region Specified in Hostname (Inside FTP & API Access). eg: <REGION>.storage.bunnycdn.com
+BUNNY_HOSTNAME: Hostname value (Inside FTP & API Access). eg: ny.storage.bunnycdn.com
 BUNNY_PULL_ZONE: Pull Zone URL.
 ```
 

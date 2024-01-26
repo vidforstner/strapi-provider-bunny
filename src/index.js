@@ -12,14 +12,14 @@ const { ApplicationError } = errors;
  * @param {string} config.api_key - The API key for Bunny CDN.
  * @param {string} config.storage_zone - The storage zone name in Bunny CDN.
  * @param {string} config.pull_zone - The pull zone name in Bunny CDN.
- * @param {string} config.region - The region of the Bunny CDN storage.
+ * @param {string} config.hostname - The region of the Bunny CDN storage.
  * @returns {Object} The initialized upload, download, and delete methods.
  */
 
-const init = ({ api_key, storage_zone, pull_zone, region }) => {
-  if (!api_key || !storage_zone || !pull_zone || !region) {
+const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
+  if (!api_key || !storage_zone || !pull_zone || !hostname) {
     throw new ApplicationError(
-      "BUNNY_API_KEY, BUNNY_REGION, BUNNY_STORAGE_ZONE or BUNNY_PULL_ZONE can't be null or undefined.",
+      "BUNNY_API_KEY, BUNNY_HOSTNAME, BUNNY_STORAGE_ZONE or BUNNY_PULL_ZONE can't be null or undefined.",
     );
   }
 
@@ -38,7 +38,7 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
 
     try {
       const response = await axios.put(
-        `ny.storage.bunnycdn.com/${storage_zone}/${file.hash}${file.ext}`,
+        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         data,
         {
           headers: {
@@ -74,7 +74,7 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
   const download = async (file) => {
     try {
       const response = await axios.get(
-        `${region}.storage.bunnycdn.com/${storage_zone}/${file.hash}${file.ext}`,
+        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,
@@ -113,7 +113,7 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
   const deleteFile = async (file) => {
     try {
       const response = await axios.delete(
-        `${region}.storage.bunnycdn.com/${storage_zone}/${file.hash}${file.ext}`,
+        `${hostname}/${storage_zone}/${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,
