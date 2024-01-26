@@ -142,4 +142,4 @@ const init = ({ api_key, storage_zone, pull_zone, region }) => {
   };
 };
 
-export default { init };
+export { init };
