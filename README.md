@@ -33,6 +33,7 @@ module.exports = ({ env }) => ({
         storage_zone: env('BUNNY_STORAGE_ZONE'),
         pull_zone: env('BUNNY_PULL_ZONE'),
         hostname: env('BUNNY_HOSTNAME'),
+        upload_path: env('BUNNY_UPLOAD_PATH'),
       },
     },
   },
@@ -47,6 +48,7 @@ BUNNY_API_KEY: Storage Password (Inside FTP & API Access).
 BUNNY_STORAGE_ZONE: Storage Zone name.
 BUNNY_HOSTNAME: Hostname value (Inside FTP & API Access). eg: ny.storage.bunnycdn.com
 BUNNY_PULL_ZONE: Pull Zone URL.
+BUNNY_UPLOAD_PATH: Upload path, optional.  Should be in the form 'path/subdir' without leading and trailing slashes.
 ```
 
 Enter Pull Zone URL without trailing slash – `https://<pull-zone-name>.b-cdn.net`.\

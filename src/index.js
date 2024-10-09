@@ -13,10 +13,11 @@ const { ApplicationError } = errors;
  * @param {string} config.storage_zone - The storage zone name in Bunny CDN.
  * @param {string} config.pull_zone - The pull zone name in Bunny CDN.
  * @param {string} config.hostname - The region of the Bunny CDN storage.
+ * @param {string?} config.upload_path - The default upload path, optional
  * @returns {Object} The initialized upload, download, and delete methods.
  */
 
-const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
+const init = ({ api_key, storage_zone, pull_zone, hostname, upload_path }) => {
   if (!api_key || !storage_zone || !pull_zone || !hostname) {
     throw new ApplicationError(
       "BUNNY_API_KEY, BUNNY_HOSTNAME, BUNNY_STORAGE_ZONE or BUNNY_PULL_ZONE can't be null or undefined.",
@@ -35,9 +36,11 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
   const upload = async (file) => {
     const data = file.stream || Buffer.from(file.buffer, 'binary');
 
+    const path = upload_path ? `${upload_path}/` : '';
+
     try {
       const response = await axios.put(
-        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${path}${file.hash}${file.ext}`,
         data,
         {
           headers: {
@@ -53,7 +56,7 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
         );
       }
 
-      file.url = `https://${pull_zone}/${file.hash}${file.ext}`;
+      file.url = `https://${pull_zone}/${path}${file.hash}${file.ext}`;
     } catch (error) {
       throw new ApplicationError(
         `Error uploading to Bunny.net: ${error.message}`,
@@ -71,8 +74,10 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
    */
   const download = async (file) => {
     try {
+      const path = upload_path ? `${upload_path}/` : '';
+
       const response = await axios.get(
-        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${path}${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,
@@ -110,8 +115,9 @@ const init = ({ api_key, storage_zone, pull_zone, hostname }) => {
    */
   const deleteFile = async (file) => {
     try {
+      const path = upload_path ? `${upload_path}/` : '';
       const response = await axios.delete(
-        `https://${hostname}/${storage_zone}/${file.hash}${file.ext}`,
+        `https://${hostname}/${storage_zone}/${path}${file.hash}${file.ext}`,
         {
           headers: {
             AccessKey: api_key,
