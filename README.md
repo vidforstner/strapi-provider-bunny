@@ -1,6 +1,6 @@
 # @nexide/strapi-provider-bunny
 
-Bunny.net Upload Provider for Strapi V4.
+Bunny.net Upload Provider for Strapi V5.
 
 ## Installation
 
