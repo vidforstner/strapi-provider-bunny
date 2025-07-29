@@ -47,6 +47,8 @@ const init = ({ api_key, storage_zone, pull_zone, hostname, upload_path }) => {
             AccessKey: api_key,
             'content-type': 'application/octet-stream',
           },
+          maxContentLength: Infinity,
+          maxBodyLength: Infinity,
         },
       );
 
